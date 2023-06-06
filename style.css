@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*  
+.page > *{
+    flex-grow: 1;
+}
+*/
+
+.header{
+    background-color: lightgray;
+    padding: 3%;
+}
+
+.body_one{
+    background-color: yellow;
+    padding: 3%;
+}
+
+.body_two{
+    flex-grow: 1;
+    padding: 15%;
+    background-color: pink;
+
+}
+
+.footer{
+    background-color: lightblue;
+    padding: 1%;
+}
