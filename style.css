@@ -55,6 +55,12 @@
     font-size: 20px;
 }
 
+.b_remove{
+    color: red;
+    border-style: none;
+    background-color: white;
+    font-size: 30px; 
+}
 
 .footer{
     background-color: lightblue;
