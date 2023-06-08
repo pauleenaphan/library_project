@@ -1,6 +1,6 @@
-let library = [{'title':"Harry Potter", 'author':"J.K. Rowling", 'date': "1990", 'inlibrary': false}];
+let library = [];
 let addbtn = document.getElementById("add");
-let sub_btn = document.getElementById("submit");
+let sub_btn = document.getElementById("submit_btn");
 
 let remove_btn = document.createElement("button");
 remove_btn.className = "remove_btn";
@@ -92,7 +92,8 @@ addbtn.addEventListener("click", ()=>{
 //after pressing the submit button users can put in their book info and add it to their librar
 sub_btn.addEventListener("click", (e)=>{
     //prevents the form from sending stuff to the server
-    e.preventDefault(); 
+    
+    //e.preventDefault();
     addbook(this.title.value, this.author.value, this.date.value);
     form.style.visibility = "hidden";
     addToLibrary();
