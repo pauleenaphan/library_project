@@ -79,7 +79,7 @@
     
 }
 
-.b_author, .b_dates{
+.b_author, .b_date{
     font-size: 180%;
     
 }
@@ -126,9 +126,12 @@ img{
     background-color: #9fd8ed;
 
     position: absolute;
-    top: 30%; /*moves the box to the top by 50%*/
-    left: 38%;
+    top: 50%; /*moves the box to the top by 50%*/
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
+
+
 
     visibility: hidden;
 }
@@ -154,7 +157,7 @@ li{
     margin-bottom: 30px;
 }
 
-#submit{
+#submit_btn{
     padding: 10px;
     margin-left: 35%;
     width: 30%;
