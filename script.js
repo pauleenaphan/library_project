@@ -1,8 +1,13 @@
 let library = [{'title':"Harry Potter", 'author':"J.K. Rowling", 'date': "1990", 'inlibrary': false}];
 let addbtn = document.getElementById("add");
+let sub_btn = document.getElementById("submit");
+
+let remove_btn = document.createElement("button");
+remove_btn.className = "remove_btn";
+remove_btn.textContent = "X";
+
 let form = document.getElementById("form");
 let form2 = document.getElementById("form2");
-let sub_btn = document.getElementById("submit");
 
 let title = document.getElementById("title").value;
 let author = document.getElementById("author").value;
@@ -12,7 +17,7 @@ let body = document.getElementsByClassName("body_two");
 
 //creates the book
 function addbook(_title, _author, _date){
-    console.log("book function");
+    console.log("added book");
     library.push({title: _title, author: _author, date: _date, inlibrary: false});
 }
 
@@ -44,10 +49,37 @@ function addToLibrary(){
             b_date.textContent = (library[i].date);
             book.appendChild(b_date);
 
-            let b_remove = document.createElement("button");
-            b_remove.className = "b_remove";
-            b_remove.textContent = "X";
-            book.appendChild(b_remove);
+            let read_status = document.createElement("button");
+            read_status.className = "read_status";
+            read_status.textContent = "Read";
+
+            read_status.addEventListener("click", function(){
+                if(read_status.style.color == "red"){
+                    read_status.style.color = "green";
+                    read_status.innerHTML = "Read";
+                }else{
+                    read_status.style.color = "red";
+                    read_status.innerHTML = "Unread";
+                }
+            })
+            book.appendChild(read_status);
+
+
+            let remove_btn = document.createElement("button");
+            remove_btn.className = "remove_btn";
+            remove_btn.textContent = "X";
+
+            //removes the book when clicking on the x
+            remove_btn.addEventListener("click", function(){
+                removebook(b_title);
+
+                //removes the book class, therefore removing the book sqr on the screen
+                book.remove();
+            })
+
+            book.appendChild(remove_btn);
+
+            
         }
     }
 }
@@ -69,3 +101,12 @@ sub_btn.addEventListener("click", (e)=>{
     form2.reset();
 });
 
+//removes book from the library
+function removebook(_title){
+    for(var i = 0; i < library.length; i++){
+        console.log("this is looping");
+        if(library[i].title == _title.innerHTML){
+            library.splice(i, 1);
+       }
+    }
+}
