@@ -4,7 +4,7 @@ let sub_btn = document.getElementById("submit");
 
 let remove_btn = document.createElement("button");
 remove_btn.className = "remove_btn";
-remove_btn.textContent = "X";
+remove_btn.textContent = "x";
 
 let form = document.getElementById("form");
 let form2 = document.getElementById("form2");
@@ -33,21 +33,6 @@ function addToLibrary(){
             book.className = "book";
             //this property is 0 because we are choosing body_two which is the first element in that class
             document.getElementsByClassName("body_two")[0].appendChild(book);
-
-            let b_title = document.createElement('div');
-            b_title.className = "b_title";
-            b_title.textContent = (library[i].title);
-            book.appendChild(b_title);
-
-            let b_author = document.createElement('div');
-            b_author.className = "b_author";
-            b_author.textContent = (library[i].author);
-            book.appendChild(b_author);
-
-            let b_date = document.createElement('div');
-            b_date.className = "b_date";
-            b_date.textContent = (library[i].date);
-            book.appendChild(b_date);
 
             let read_status = document.createElement("button");
             read_status.className = "read_status";
@@ -78,6 +63,21 @@ function addToLibrary(){
             })
 
             book.appendChild(remove_btn);
+
+            let b_title = document.createElement('div');
+            b_title.className = "b_title";
+            b_title.textContent = (library[i].title);
+            book.appendChild(b_title);
+
+            let b_author = document.createElement('div');
+            b_author.className = "b_author";
+            b_author.textContent = (library[i].author);
+            book.appendChild(b_author);
+
+            let b_date = document.createElement('div');
+            b_date.className = "b_date";
+            b_date.textContent = (library[i].date);
+            book.appendChild(b_date);
 
             
         }
