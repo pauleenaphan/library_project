@@ -1,5 +1,7 @@
 *{
     margin: 0;
+    font-family: monospace;
+                                                
 }
 
 .page{
@@ -16,18 +18,39 @@
 */
 
 .header{
-    background-color: lightgray;
+    background-color: white;
     padding: 3%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 50px;
+}
+
+#login{
+    background-color: pink;
+    font-size: 20px;
+    padding: 20px;
+    width: 150px;
+    border-radius: 30px;
+    border-style: none;
+    
+    
 }
 
 .body_one{
-    background-color: yellow;
-    padding: 3%;
+    background-color: pink;
+    padding: 2%;
+    text-align: center;
+}
+
+#add{
+    background-color: pink;
+    font-size: 40px;
+    border-style: none;
 }
 
 .body_two{
     flex-grow: 1;
-    background-color: pink;
+    background-color: gainsboro;
 
     display: flex;
     flex-direction: row;
@@ -38,74 +61,102 @@
 /* book from the dom element */
 .book{
     background-color: white;
+    border-color: pink;
+    border-top-style: solid;
+    border-width: 20px;
     padding: 30px;
     margin: 30px 20px;
     height: 200px;
     width: 200px;
     border-radius: 10px;
-
-    text-align: center;
+    overflow-wrap: break-word;
+    overflow-y: scroll;
 }
 
 .b_title{
-    font-size: 40px;
+    font-weight: bold;
+    font-size: 230%;
+    
 }
 
-.b_author, .b_date{
-    font-size: 20px;
+.b_author, .b_dates{
+    font-size: 180%;
+    
 }
 
-.b_remove{
+
+
+.remove_btn{
     color: red;
-    border-style: none;
     background-color: white;
     font-size: 30px; 
+    margin-top: -50px;
+    margin-left: 85px;
+    border-style: none;
+}
+
+.read_status{
+    color: green;
+    background-color: white;
+    font-size: 20px;
+    margin-top: -20px;
+    margin-left: -20px;
+    width: 90px;
+    padding: 10px;
+    border-style: none;
 }
 
 .footer{
-    background-color: lightblue;
+    background-color: pink;
     padding: 1%;
+    text-align: center;
+    font-size: 20px;
+}
+
+img{
+    width: 2%;
+    margin-bottom: -3px;
 }
 
 #form{
     padding: 40px;
-    width: 500px;
-    height: 400px;
+    width: 300px;
+    height: 420px;
     border-radius: 20px;
-    background-color: violet;
+    background-color: #9fd8ed;
 
     position: absolute;
     top: 30%; /*moves the box to the top by 50%*/
-    left: 32%;
+    left: 38%;
     z-index: 2;
 
     visibility: hidden;
 }
 
-.form_container{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
 input[type="text"], input[type="number"]{
     padding: 15px;
+    width: 250px;
+    font-size: 20px;
+    margin-top: 10px;
     border-radius: 15px;
     border-style: none;
-    width: 450px;
-    margin-top: 10px;
 }
 
+input[type="text"]:focus, input[type="number"]:focus{
+    background-color: lightgray;
+    outline: none;
+}
 
 li{
+    text-align: center;
     list-style: none;
     font-size: 30px;
+    margin-bottom: 30px;
 }
 
 #submit{
-    padding: 20px;
-    margin: auto;
+    padding: 10px;
+    margin-left: 35%;
     width: 30%;
     border-radius: 10px;
     font-size: 20px;
