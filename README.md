@@ -3,7 +3,7 @@
 This is a library project where users can add books they read by the book title, author, and published date. The crud functions were created by using javascript and focuses on the use of object arrays.
 
 # Live Server:
-
+https://pauleenaphan.github.io/library_project/
 
 # Future Implementations:
 
