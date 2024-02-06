@@ -7,7 +7,6 @@ remove_btn.className = "remove_btn";
 remove_btn.textContent = "x";
 
 let form = document.getElementById("form");
-let form2 = document.getElementById("form2");
 
 let title = document.getElementById("title").value;
 let author = document.getElementById("author").value;
@@ -18,6 +17,15 @@ let body = document.getElementsByClassName("body_two");
 //creates the book
 function addbook(_title, _author, _date){
     console.log("added book");
+    if(_title == ""){
+        _title = "[Title: BLANK]";
+    }
+    if(_author == ""){
+        _author = "[Author: BLANK]";
+    }
+    if(_date == ""){
+        _date = "[Date: BLANK]";
+    }
     library.push({title: _title, author: _author, date: _date, inlibrary: false});
 }
 
@@ -78,8 +86,6 @@ function addToLibrary(){
             b_date.className = "b_date";
             b_date.textContent = (library[i].date);
             book.appendChild(b_date);
-
-            
         }
     }
 }
@@ -99,8 +105,8 @@ sub_btn.addEventListener("click", (e)=>{
     addToLibrary();
 
     //after we print the books we reset the form so the input text will be blank
-    form2.reset();
-});
+    form.reset();
+});  
 
 //removes book from the library
 function removebook(_title){
